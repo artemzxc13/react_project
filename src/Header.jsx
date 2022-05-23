@@ -1,22 +1,24 @@
-
-import logo from './assets/img/pizza-logo.svg'
+import { Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import logo from './assets/img/pizza-logo.svg';
+import Button from './Button';
 
 function Header() {
-
-return (
-
-
-<div className="header">
-        <div className="container">
+  return (
+    <div className="header">
+      <div className="container">
+        <Link to="/">
           <div className="header__logo">
             <img width="38" src={logo} alt="Pizza logo" />
             <div>
               <h1>Pizza</h1>
-              <p></p>
             </div>
           </div>
-          <div className="header__cart">
-            <a href="/cart.html" className="button button--cart">
+        </Link>
+
+        <div className="header__cart">
+          <Link to="/cart">
+            <Button className="button--cart">
               <span>520 ₽</span>
               <div className="button__delimiter"></div>
               <svg
@@ -24,8 +26,7 @@ return (
                 height="18"
                 viewBox="0 0 18 18"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+                xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M6.33333 16.3333C7.06971 16.3333 7.66667 15.7364 7.66667 15C7.66667 14.2636 7.06971 13.6667 6.33333 13.6667C5.59695 13.6667 5 14.2636 5 15C5 15.7364 5.59695 16.3333 6.33333 16.3333Z"
                   stroke="white"
@@ -49,11 +50,12 @@ return (
                 />
               </svg>
               <span>3</span>
-            </a>
-          </div>
+            </Button>
+          </Link>
         </div>
       </div>
-)
+    </div>
+  );
 }
 
-export default  Header
+export default Header;
